@@ -1,15 +1,17 @@
-import Carro from "./Carro";
+import React from "react"
+import {Carro} from "./Carro"
 
-function Garagem() {
-  return (
-    <div>
-      <h1>Garagem de Indio</h1>
-      <Carro />
-      <Carro />
-      <Carro />
-      <Carro />
-    </div>
-  );
+export default function Garagem(props) {
+    // const nome = "Labenu"
+    return (
+        <section class="garagem">
+            <h1>Garagem de {props.nome}</h1>
+            <button onClick={() => props.apresentaGaragem(props.nome) }>Clique aqui</button>
+            <Carro carro={props.carro1} />
+            <Carro carro={props.carro2}/>
+            <Carro carro={props.carro3}/>
+            <Carro carro={props.carro4}/>
+        </section>
+    )
 }
 
-export default Garagem;
